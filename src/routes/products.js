@@ -11,7 +11,7 @@ router.post('/product', productsController.createProduct);
 }); */
 
 // READ -> GET
-router.get('/product', productsController.getAllProducts);
+router.get('/products', productsController.getAllProducts);
 
 // UPDATE
 router.put('/product', function(req, res, next){
