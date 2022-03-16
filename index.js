@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 // var bodyParser = require('body-parser')
 
 const app = express();
@@ -32,4 +33,8 @@ app.use(function(error, req, res, next){
     res.status(status).json({message: message, data: data});
 });
 
-app.listen(4000, () => console.log('Application is running'));
+mongoose.connect('mongodb+srv://Handy_Kharisma:KharismaDS75@cluster0.zsenz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+.then(function(error, req, res, next){
+    app.listen(4000, () => console.log('Connection Success, Application is Running'));
+})
+.catch(err => console.log(err));
