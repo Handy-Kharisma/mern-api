@@ -3,8 +3,8 @@ const router = express.Router();
 
 const productsController = require('../controllers/products');
 
-// CREATE -> POST http://localhost:4000/v1/customer/product
 router.post('/product', productsController.createProduct);
+// CREATE -> POST http://localhost:4000/v1/customer/product
 /* router.post('/product', function(req, res, next){
     res.json({name : "Handy Kharisma", email : "handykharisma75@gmail.com"});
     next();

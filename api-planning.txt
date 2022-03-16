@@ -15,6 +15,8 @@ Standard Status Response
 500 - INTERNAL SERVER ERROR     --> Error on Server Side
 502 - BAD GATEWAY               --> Invalid Response From Another Request
 
+==================================================================================
+
 GROUP: Authentication
 
 [1] - Register
@@ -37,15 +39,49 @@ res:
 }
 
 err-response:
+201 -> Register Berhasil
 400 -> Input yang anda masukan tidak valid
+
+==================================================================================
 
 [2] - Login
 {root.api}/{version}/auth/login
 
+==================================================================================
 
 GROUP: Blog
 
 [1] - Create Blog Post
+[POST] - {root.api}/{version}/blog/post
+
+req:
+{
+    "title" : "Title Blog",
+    "image" : "imagefile.png",
+    "body" : "Lorem Ipsum is simply dummy text ot the printing"
+}
+res:
+{
+    "message" : "Create Blog Post Success",
+    "data" : {
+        "post_id" : 1,
+        "title" : "Title Blog",
+        "image" : "imagefile.png",
+        "body" : "Lorem Ipsum is simply dummy text ot the printing"
+        "create_at" : "12/06/2022"
+        "author" : {
+            "uid" : 1,
+            "name" : "Handy"
+        }
+    }
+}
+
+err-response:
+201 -> Blog Post Berhasil Dibuat
+400 -> Input yang anda masukan tidak valid
+
+==================================================================================
+
 [2] - Get Blog Post
 [3] - Update Blog Post
 [4] - Delete Blog Post

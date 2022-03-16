@@ -4,7 +4,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const productRoutes = require('./src/routes/products');
+// const productRoutes = require('./src/routes/products');
+const authRoutes = require('./src/routes/auth');
+const blogRoutes = require('./src/routes/blog');
+
 
 app.use(bodyParser.json()) //type JSON
 // JSON.stringify()
@@ -16,7 +19,9 @@ app.use(function(req, res, next){
     next();
 });
 
-app.use('/v1/customer', productRoutes);
+// app.use('/v1/customer', productRoutes);
 // app.use('/v2/customer', anotherRoutes);
+app.use('/v1/auth', authRoutes);
+app.use('/v1/blog', blogRoutes);
 
 app.listen(4000, () => console.log('Application is running'));
