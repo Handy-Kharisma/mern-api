@@ -14,6 +14,7 @@ router.post('/post', [
 
 
 router.get('/posts', blogController.getAllBlogPost);
+// router.get('/posts?page=1&perPage=4', blogController.getAllBlogPost);
 router.get('/post/:postId', blogController.getBlogPostById);
 router.put('/post/:postId', [
     body('title').isLength({min: 5}).withMessage('Input Title Tidak Sesuai'),

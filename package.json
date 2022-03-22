@@ -1,7 +1,7 @@
 {
   "name": "mern-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST API Node JS (MERN Stack)",
   "main": "index.js",
   "dependencies": {
     "abbrev": "^1.1.1",
